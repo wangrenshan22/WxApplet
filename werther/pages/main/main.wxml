@@ -1,0 +1,11 @@
+<view class="content">
+  <view class='today'>
+    <view class='info'>
+      <view class='temp'>25℃</view>
+      <view class='weather'>晴朗 南风 3~4级</view>
+      <view class=''>友情提示：今天天气不错，风和日丽，适合出去玩!</view>
+       <view class='city'>海口</view>
+    </view>
+  </view>
+  <view class='future'></view>
+</view>
