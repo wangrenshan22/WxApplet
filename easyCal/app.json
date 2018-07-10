@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/cal/cal",
+    "pages/historyList/historyList"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#4876FF",
+    "navigationBarTitleText": "Easy计算器",
+    "navigationBarTextStyle":"light"
+  }
+}
