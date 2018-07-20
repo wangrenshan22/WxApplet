@@ -1,11 +1,11 @@
 {
-  "pages":[
+  "pages": [
     "pages/main/main"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarTitleText": "天气通",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#83D944",
+    "navigationBarTextStyle": "light"
   }
 }

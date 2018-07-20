@@ -2,10 +2,33 @@
   <view class='today'>
     <view class='info'>
       <view class='temp'>{{today.wendu}}℃</view>
-      <view class='weather'>{{today.todayInfo.type}}  {{today.todayInfo.fengxiang}}  {{fengli}}</view>
+      <view class='weather'>{{today.todayInfo.type}} {{today.todayInfo.fengxiang}} {{fengli}}</view>
       <view class=''>友情提示：{{today.ganmao}}</view>
       <view class='city'>{{city}}</view>
     </view>
   </view>
-  <view class='future'></view>
+  <import src="../template/itemftl.wxml" />
+  <view class='future'>
+    <block wx:for="{{future}}">
+      <template is="future-item" date="{{...item}}"></template>
+    </block>
+  </view>
+   <view>
+    <template is="msgItem" data="{{...item}}" />
+  </view> 
 </view>
+<template name="msgItem">
+  <view>
+    <text> {{index}}: {{msg}} </text>
+    <text> Time: {{time}} </text>
+  </view>
+</template>
+<template name="future-item">
+  <view class='future-item'>
+    <view> {{date}}</view>
+    <view>{{item.type}}</view>
+    <view>{{item.fengxiang}}</view>
+    <view>{{item.low}}</view>
+    <view>{{item.high}}</view>
+  </view>
+</template>

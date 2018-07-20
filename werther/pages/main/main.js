@@ -7,7 +7,12 @@ Page({
     city: "",
     today: [],
     future: [],
-    fengli:""
+    fengli:"",
+    item: {
+      index: 0,
+      msg: 'this is a template',
+      time: '2016-09-15'
+    }
   },
 
   /**
@@ -75,7 +80,7 @@ Page({
         var longitude = res.longitude
         var speed = res.speed
         var accuracy = res.accuracy
-        console.log(latitude, longitude);
+        //console.log(latitude, longitude);
 
         page.loadCity(latitude, longitude);
       }
@@ -84,13 +89,13 @@ Page({
   loadCity: function(latitude, longitude) {
     var page = this;
     wx.request({
-      url: 'https://api.map.baidu.com/geocoder/v2/?ak=dGGctvCIoBslQfzgAuFi7ZvaBx72D3gC&location=' + latitude + ',' + longitude + '&output=json',
+      url: 'http://api.map.baidu.com/geocoder/v2/?ak=dGGctvCIoBslQfzgAuFi7ZvaBx72D3gC&location=' + latitude + ',' + longitude + '&output=json',
       header: {
         "content-Type": "application/x-www-form-urlencoded"
       },
       method: "POST",
       success: function(res) {
-        console.log(res);
+        //console.log(res);
         var city = res.data.result.addressComponent.city;
         city = city.replace("市", "");
         page.setData({
@@ -109,7 +114,7 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function(res) {
-        console.log(res)
+        //console.log(res)
         var future = res.data.data.forecast;
         var todayInfo = future.shift();
         var today = res.data.data;
@@ -118,7 +123,9 @@ Page({
           today: today,
           future: future,
           fengli: today.todayInfo.fengli.replace("<![CDATA[", "").replace("]]>", "")
+        
         })
+        //console.log(future[0].date);
       }
     });
   }
