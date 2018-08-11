@@ -9,7 +9,7 @@
   </view>
   <import src="../template/itemftl.wxml" />
   <view class='future'>
-    <block wx:for="{{future}}">
+    <block wx:for="{{future}}" wx:key="{{item}}">
       <template is="future-item" date="{{...item}}"></template>
     </block>
   </view>
